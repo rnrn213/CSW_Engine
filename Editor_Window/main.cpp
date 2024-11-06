@@ -6,6 +6,8 @@
 
 #include "../CSWEngine_SOURCE/cswApplication.h"
 
+csw::Application application;
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -56,10 +58,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 TranslateMessage(&msg);
                 DispatchMessage(&msg);
             }
-            else
-            {
-
-            }
+        }
+        else
+        {
+            application.Run();
         }
     }
 
@@ -120,6 +122,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+
+   application.Initialize(hWnd);
 
    if (!hWnd)
    {
