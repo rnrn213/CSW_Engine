@@ -1,4 +1,5 @@
 #include "cswApplication.h"
+#include "cswInput.h"
 
 namespace csw
 {
@@ -19,6 +20,8 @@ namespace csw
 		mHdc = GetDC(hwnd);
 
 		mPlayer.SetPosition(0.0f, 0.0f);
+
+		Input::Initialize();
 	}
 	void Application::Run()
 	{
@@ -28,6 +31,8 @@ namespace csw
 	}
 	void Application::Update()
 	{
+		Input::Update();
+
 		mPlayer.Update();
 	}
 	void Application::LateUpdate()
