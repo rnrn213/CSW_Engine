@@ -1,5 +1,6 @@
 #pragma once
 #include "CommonInclude.h"
+#include "cswGameObject.h"
 
 namespace csw
 {
@@ -20,8 +21,6 @@ namespace csw
 		HWND mHwnd;
 		HDC mHdc;
 
-		float mSpeed;
-		float mX;
-		float mY;
+		GameObject mPlayer;
 	};
 }

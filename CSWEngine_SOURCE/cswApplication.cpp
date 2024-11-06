@@ -5,9 +5,6 @@ namespace csw
 	Application::Application()
 		: mHwnd(nullptr)
 		, mHdc(nullptr)
-		, mSpeed(0.0f)
-		, mX(0.0f)
-		, mY(0.0f)
 	{
 
 	}
@@ -20,6 +17,8 @@ namespace csw
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
+
+		mPlayer.SetPosition(0.0f, 0.0f);
 	}
 	void Application::Run()
 	{
@@ -29,24 +28,7 @@ namespace csw
 	}
 	void Application::Update()
 	{
-		mSpeed += 0.01f;
-
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
-		{
-			mX -= 0.01f;
-		}
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
-		{
-			mX += 0.01f;
-		}
-		if (GetAsyncKeyState(VK_UP) & 0x8000)
-		{
-			mY -= 0.01f;
-		}
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
-		{
-			mY += 0.01f;
-		}
+		mPlayer.Update();
 	}
 	void Application::LateUpdate()
 	{
@@ -54,6 +36,6 @@ namespace csw
 	}
 	void Application::Render()
 	{
-		Rectangle(mHdc, 500 + mX, 500 + mY, 600 + mX, 600 + mY);
+		mPlayer.Render(mHdc);
 	}
 }
