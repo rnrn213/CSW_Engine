@@ -1,6 +1,7 @@
 #include "cswApplication.h"
 #include "cswInput.h"
 #include "cswTime.h"
+#include "cswSceneManager.h"
 
 namespace csw
 {
@@ -42,7 +43,7 @@ namespace csw
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(oldBitmap);
 
-		mPlayer.SetPosition(0.0f, 0.0f);
+		SceneManager::Initialize();
 
 		Input::Initialize();
 		Time::Initialize();
@@ -58,7 +59,7 @@ namespace csw
 		Input::Update();
 		Time::Update();
 
-		mPlayer.Update();
+		SceneManager::Update();
 	}
 	void Application::LateUpdate()
 	{
@@ -66,11 +67,20 @@ namespace csw
 	}
 	void Application::Render()
 	{
-		Rectangle(mBackHdc, 0, 0, 1600, 900);
+		clearRenderTarget();
 
 		Time::Render(mBackHdc);
-		mPlayer.Render(mBackHdc);
+		SceneManager::Render(mBackHdc);
 
-		BitBlt(mHdc, 0, 0, mWidth, mHeight, mBackHdc, 0, 0, SRCCOPY);
+		copyRenderTarget(mBackHdc, mHdc);
+	}
+	void Application::clearRenderTarget()
+	{
+		// clear
+		Rectangle(mBackHdc, -1, -1, 1601, 901);
+	}
+	void Application::copyRenderTarget(HDC source, HDC dest)
+	{
+		BitBlt(dest, 0, 0, mWidth, mHeight, source, 0, 0, SRCCOPY);
 	}
 }
