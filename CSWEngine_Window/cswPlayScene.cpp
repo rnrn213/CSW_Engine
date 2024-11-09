@@ -1,5 +1,8 @@
 #include "cswPlayScene.h"
 #include "cswGameObject.h"
+#include "cswPlayer.h"
+#include "cswTransform.h"
+#include "cswSpriteRenderer.h"
 
 namespace csw
 {
@@ -11,8 +14,56 @@ namespace csw
 	}
 	void PlayScene::Initialize()
 	{
-		GameObject* objc = new GameObject();
-		AddGameObject(objc);
+		//for (size_t i = 0; i < 100; i++)
+		//{
+		//	GameObject* obj = new GameObject();
+		//	obj->SetPosition(rand() % 1600, rand() % 900);
+		//	AddGameObject(obj);
+		//}
+		{
+			Player* pl = new Player();
+			Transform* tr
+				= pl->AddComponent<Transform>();
+			tr->SetPos(800, 450);
+
+			tr->SetName(L"TR");
+
+			SpriteRenderer* sr
+				= pl->AddComponent<SpriteRenderer>();
+			sr->SetName(L"SR");
+
+			AddGameObject(pl);
+		}
+
+		{
+			Player* pl = new Player();
+			Transform* tr
+				= pl->AddComponent<Transform>();
+			tr->SetPos(300, 450);
+
+			tr->SetName(L"TR");
+
+			SpriteRenderer* sr
+				= pl->AddComponent<SpriteRenderer>();
+			sr->SetName(L"SR");
+
+			AddGameObject(pl);
+		}
+
+		{
+			Player* pl = new Player();
+			Transform* tr
+				= pl->AddComponent<Transform>();
+			tr->SetPos(100, 650);
+
+			tr->SetName(L"TR");
+
+			SpriteRenderer* sr
+				= pl->AddComponent<SpriteRenderer>();
+			sr->SetName(L"SR");
+
+			AddGameObject(pl);
+		}
 	}
 	void PlayScene::Update()
 	{

@@ -5,41 +5,43 @@
 namespace csw
 {
 	GameObject::GameObject()
-		: mX(0)
-		, mY(0)
 	{
 
 	}
 	GameObject::~GameObject()
 	{
-
+		for (Component* comp : mComponents)
+		{
+			delete comp;
+			comp = nullptr;
+		}
+	}
+	void GameObject::Initialize()
+	{
+		for (Component* comp : mComponents)
+		{
+			comp->Initialize();
+		}
 	}
 	void GameObject::Update()
 	{
-		const int speed = 100.0f;
-		if (Input::GetKey(eKeyCode::A))
+		for (Component* comp : mComponents)
 		{
-			mX -= speed * Time::DeltaTime();
-		}
-		if (Input::GetKey(eKeyCode::D))
-		{
-			mX += speed * Time::DeltaTime();
-		}
-		if (Input::GetKey(eKeyCode::W))
-		{
-			mY -= speed * Time::DeltaTime();
-		}
-		if (Input::GetKey(eKeyCode::S))
-		{
-			mY += speed * Time::DeltaTime();
+			comp->Update();
 		}
 	}
 	void GameObject::LateUpdate()
 	{
-
+		for (Component* comp : mComponents)
+		{
+			comp->LateUpdate();
+		}
 	}
 	void GameObject::Render(HDC hdc)
 	{
-		Rectangle(hdc, 500 + mX, 500 + mY, 600 + mX, 600 + mY);
+		for (Component* comp : mComponents)
+		{
+			comp->Render(hdc);
+		}
 	}
 }

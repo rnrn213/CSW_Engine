@@ -16,20 +16,26 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)cswApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswTransform.cpp" />
   </ItemGroup>
 </Project>

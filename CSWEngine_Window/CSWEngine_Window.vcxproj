@@ -130,9 +130,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cswLoadScenes.h" />
+    <ClInclude Include="cswPlayer.h" />
     <ClInclude Include="cswPlayScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cswPlayer.cpp" />
     <ClCompile Include="cswPlayScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
