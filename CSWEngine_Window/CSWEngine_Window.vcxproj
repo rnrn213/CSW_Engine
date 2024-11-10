@@ -132,10 +132,12 @@
     <ClInclude Include="cswLoadScenes.h" />
     <ClInclude Include="cswPlayer.h" />
     <ClInclude Include="cswPlayScene.h" />
+    <ClInclude Include="cswTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cswPlayer.cpp" />
     <ClCompile Include="cswPlayScene.cpp" />
+    <ClCompile Include="cswTitleScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

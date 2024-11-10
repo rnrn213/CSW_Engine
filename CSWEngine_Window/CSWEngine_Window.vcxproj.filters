@@ -4,16 +4,33 @@
     <Filter Include="Scenes">
       <UniqueIdentifier>{c3315fed-6d5f-42ec-b9ae-727d4bceab0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{c03ff855-e4ce-4110-8715-051ec5321760}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cswLoadScenes.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="cswPlayScene.h" />
-    <ClInclude Include="cswPlayer.h" />
+    <ClInclude Include="cswPlayScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="cswPlayer.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="cswTitleScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cswPlayScene.cpp" />
-    <ClCompile Include="cswPlayer.cpp" />
+    <ClCompile Include="cswPlayScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="cswPlayer.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="cswTitleScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
