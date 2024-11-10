@@ -1,7 +1,7 @@
 #pragma once
 
 
-namespace csw
+namespace csw::enums
 {
 	enum class eLayerType
 	{

@@ -6,6 +6,7 @@
 #include "cswInput.h"
 #include "cswTitleScene.h"
 #include "cswSceneManager.h"
+#include "cswObject.h"
 
 namespace csw
 {
@@ -18,10 +19,10 @@ namespace csw
 	void PlayScene::Initialize()
 	{
 		{
-			bg = new Player();
+			/*bg = new Player();
 			Transform* tr
 				= bg->AddComponent<Transform>();
-			tr->SetPos(Vector2(0, 0));
+			tr->SetPosition(Vector2(0, 0));
 
 			tr->SetName(L"TR");
 
@@ -30,7 +31,12 @@ namespace csw
 			sr->SetName(L"SR");
 			sr->ImageLoad(L"C:\\Users\\rnrn2\\Downloads\\pic1.png");
 
-			AddGameObject(bg, eLayerType::BackGround);
+			AddGameObject(bg, eLayerType::BackGround);*/
+			bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
+			SpriteRenderer* sr
+				= bg->AddComponent<SpriteRenderer>();
+			sr->SetName(L"SR");
+			sr->ImageLoad(L"C:\\Users\\rnrn2\\Downloads\\pic1.png");
 		}
 	}
 	void PlayScene::Update()
@@ -61,6 +67,6 @@ namespace csw
 		Scene::OnExit();
 		Transform* tr
 			= bg->GetComponent<Transform>();
-		tr->SetPos(Vector2(0, 0));
+		tr->SetPosition(Vector2(0, 0));
 	}
 }

@@ -23,6 +23,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)cswInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswScene.h" />

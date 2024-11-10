@@ -1,12 +1,13 @@
 #include "cswGameObject.h"
 #include "cswInput.h"
 #include "cswTime.h"
+#include "cswTransform.h"
 
 namespace csw
 {
 	GameObject::GameObject()
 	{
-
+		initializeTransform();
 	}
 	GameObject::~GameObject()
 	{
@@ -43,5 +44,10 @@ namespace csw
 		{
 			comp->Render(hdc);
 		}
+	}
+
+	void GameObject::initializeTransform()
+	{
+		AddComponent<Transform>();
 	}
 }
