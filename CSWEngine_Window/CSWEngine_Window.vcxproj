@@ -131,12 +131,14 @@
   <ItemGroup>
     <ClInclude Include="cswLoadScenes.h" />
     <ClInclude Include="cswPlayer.h" />
+    <ClInclude Include="cswPlayerScript.h" />
     <ClInclude Include="cswPlayScene.h" />
     <ClInclude Include="cswTitleScene.h" />
     <ClInclude Include="cswLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cswPlayer.cpp" />
+    <ClCompile Include="cswPlayerScript.cpp" />
     <ClCompile Include="cswPlayScene.cpp" />
     <ClCompile Include="cswTitleScene.cpp" />
   </ItemGroup>

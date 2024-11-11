@@ -1,11 +1,13 @@
 #include "cswSpriteRenderer.h"
 #include "cswGameObject.h"
 #include "cswTransform.h"
+#include "cswTexture.h"
+#include "cswRenderer.h"
 
 namespace csw
 {
 	SpriteRenderer::SpriteRenderer()
-		: Component()
+		: Component(enums::eComponentType::SpriteRenderer)
 		, mTexture(nullptr)
 		, mSize(Vector2::One)
 	{
@@ -33,6 +35,7 @@ namespace csw
 			assert(false);
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+		pos = renderer::mainCamera->CalculatePosition(pos);
 
 		if (mTexture->GetTextureType() == graphics::Texture::eTextureType::Bmp)
 		{

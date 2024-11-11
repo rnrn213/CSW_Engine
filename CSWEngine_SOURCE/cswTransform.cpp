@@ -3,6 +3,7 @@
 namespace csw
 {
 	Transform::Transform()
+		: Component(enums::eComponentType::Transform)
 	{
 	}
 

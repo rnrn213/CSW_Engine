@@ -9,6 +9,9 @@
 #include "cswObject.h"
 #include "cswTexture.h"
 #include "cswResources.h"
+#include "cswPlayerScript.h"
+#include "cswCamera.h"
+#include "cswRenderer.h"
 
 namespace csw
 {
@@ -21,15 +24,28 @@ namespace csw
 	void PlayScene::Initialize()
 	{
 		{
-			// 게임 오브젝트를 만들기 전에 리소스들 전부 Load해두면 좋다.
-			bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
-			SpriteRenderer* sr
-				= bg->AddComponent<SpriteRenderer>();
-			
-			graphics::Texture* bg = Resources::Find<graphics::Texture>(L"BG");
-			sr->SetTexture(bg);
+			// main camera
+			GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.0f, 442.0f));
+			Camera* cameraComp = camera->AddComponent<Camera>();
+			renderer::mainCamera = cameraComp;
+
+			mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
+			SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
+			sr->SetSize(Vector2(3.0f, 3.0f));
+			mPlayer->AddComponent<PlayerScript>();
+
+			graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"PackMan");
+			sr->SetTexture(packmanTexture);
+
+			GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);
+			SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
+			bgSr->SetSize(Vector2(3.0f, 3.0f));
+
+			graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"Map");
+			bgSr->SetTexture(bgTexture);
 
 			// 게임 오브젝트 생성 후에 레이어와 게임오브젝트들의 initialize 함수를 호출
+			Scene::Initialize();
 		}
 	}
 	void PlayScene::Update()
@@ -48,8 +64,8 @@ namespace csw
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
-		wchar_t str[50] = L"Play Scene";
-		TextOut(hdc, 0, 0, str, 10);
+		//wchar_t str[50] = L"Play Scene";
+		//TextOut(hdc, 0, 0, str, 10);
 	}
 	void PlayScene::OnEnter()
 	{
@@ -58,8 +74,5 @@ namespace csw
 	void PlayScene::OnExit()
 	{
 		Scene::OnExit();
-		Transform* tr
-			= bg->GetComponent<Transform>();
-		tr->SetPosition(Vector2(0, 0));
 	}
 }
