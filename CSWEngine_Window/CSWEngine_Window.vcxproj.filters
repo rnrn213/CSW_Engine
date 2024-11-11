@@ -21,6 +21,7 @@
     <ClInclude Include="cswTitleScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="cswLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cswPlayScene.cpp">

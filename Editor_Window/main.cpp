@@ -5,6 +5,7 @@
 #include "Editor_Window.h"
 
 #include "../CSWEngine_SOURCE/cswApplication.h"
+#include "../CSWEngine_Window/cswLoadResources.h"
 #include "../CSWEngine_Window/cswLoadScenes.h"
 
 csw::Application application;
@@ -133,6 +134,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
+   csw::LoadResources();
    // load scenes
    csw::LoadScenes();
 

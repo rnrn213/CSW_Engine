@@ -29,6 +29,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)cswScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswSpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswTransform.h" />
   </ItemGroup>
@@ -45,6 +46,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)cswScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswSpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswTexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswTransform.cpp" />
   </ItemGroup>
