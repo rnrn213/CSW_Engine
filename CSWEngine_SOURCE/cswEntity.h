@@ -1,6 +1,8 @@
 #pragma once
 #include "CommonInclude.h"
 
+using namespace csw::math;
+
 namespace csw
 {
 	class Entity

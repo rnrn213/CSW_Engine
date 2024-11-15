@@ -53,6 +53,10 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)cswRenderer.cpp">
       <Filter>Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswAnimation.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)cswApplication.h" />
@@ -115,6 +119,10 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)cswRenderer.h">
       <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswAnimation.h">
+      <Filter>Resource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

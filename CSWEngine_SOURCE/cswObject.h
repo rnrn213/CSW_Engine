@@ -4,6 +4,7 @@
 #include "cswGameObject.h"
 #include "cswSceneManager.h"
 #include "cswScene.h"
+#include "cswTransform.h"
 
 namespace csw::object
 {
