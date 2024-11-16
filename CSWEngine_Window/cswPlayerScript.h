@@ -8,7 +8,7 @@ namespace csw
 	public:
 		enum class eState
 		{
-			SitDown,
+			Idle,
 			Walk,
 			Sleep,
 			GiveWater,
@@ -24,11 +24,14 @@ namespace csw
 		void Render(HDC hdc) override;
 
 	private:
-		void sitDown();
+		void idle();
 		void move();
+		void giveWater();
 
 	private:
 		eState mState;
 		class Animator* mAnimator;
+
+		void (*CompleteEvent)();
 	};
 }

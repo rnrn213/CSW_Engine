@@ -8,7 +8,7 @@
 namespace csw
 {
 	PlayerScript::PlayerScript()
-		: mState(eState::SitDown)
+		: mState(eState::Idle)
 		, mAnimator(nullptr)
 	{
 	}
@@ -26,8 +26,8 @@ namespace csw
 		}
 		switch (mState)
 		{
-		case csw::PlayerScript::eState::SitDown:
-			sitDown();
+		case csw::PlayerScript::eState::Idle:
+			idle();
 			break;
 		case csw::PlayerScript::eState::Walk:
 			move();
@@ -35,6 +35,7 @@ namespace csw
 		case csw::PlayerScript::eState::Sleep:
 			break;
 		case csw::PlayerScript::eState::GiveWater:
+			giveWater();
 			break;
 		case csw::PlayerScript::eState::Attack:
 			break;
@@ -76,28 +77,35 @@ namespace csw
 	void PlayerScript::Render(HDC hdc)
 	{
 	}
-	void PlayerScript::sitDown()
+	void PlayerScript::idle()
 	{
-		if (Input::GetKey(eKeyCode::Right))
+		if (Input::GetKey(eKeyCode::LButton))
 		{
-			mState = eState::Walk;
-			mAnimator->PlayAnimation(L"RightWalk");
+			mState = PlayerScript::eState::GiveWater;
+			mAnimator->PlayAnimation(L"FrontGiveWater", false);
+
+			Vector2 mousePos = Input::GetMousePosition();
 		}
-		if (Input::GetKey(eKeyCode::Left))
-		{
-			mState = eState::Walk;
-			mAnimator->PlayAnimation(L"LeftWalk");
-		}
-		if (Input::GetKey(eKeyCode::Up))
-		{
-			mState = eState::Walk;
-			mAnimator->PlayAnimation(L"UpWalk");
-		}
-		if (Input::GetKey(eKeyCode::Down))
-		{
-			mState = eState::Walk;
-			mAnimator->PlayAnimation(L"DownWalk");
-		}
+		//if (Input::GetKey(eKeyCode::Right))
+		//{
+		//	mState = eState::Walk;
+		//	mAnimator->PlayAnimation(L"RightWalk");
+		//}
+		//if (Input::GetKey(eKeyCode::Left))
+		//{
+		//	mState = eState::Walk;
+		//	mAnimator->PlayAnimation(L"LeftWalk");
+		//}
+		//if (Input::GetKey(eKeyCode::Up))
+		//{
+		//	mState = eState::Walk;
+		//	mAnimator->PlayAnimation(L"UpWalk");
+		//}
+		//if (Input::GetKey(eKeyCode::Down))
+		//{
+		//	mState = eState::Walk;
+		//	mAnimator->PlayAnimation(L"DownWalk");
+		//}
 	}
 	void PlayerScript::move()
 	{
@@ -127,8 +135,16 @@ namespace csw
 		if (Input::GetKeyUp(eKeyCode::Right) || Input::GetKeyUp(eKeyCode::Left)
 			|| Input::GetKeyUp(eKeyCode::Up) || Input::GetKeyUp(eKeyCode::Down))
 		{
-			mState = eState::SitDown;
+			mState = eState::Idle;
 			mAnimator->PlayAnimation(L"SitDown", false);
+		}
+	}
+	void PlayerScript::giveWater()
+	{
+		if (mAnimator->IsComplete())
+		{
+			mState = eState::Idle;
+			mAnimator->PlayAnimation(L"Idle", false);
 		}
 	}
 }
