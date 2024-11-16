@@ -11,6 +11,7 @@ namespace csw
 			SitDown,
 			Walk,
 			Sleep,
+			GiveWater,
 			Attack,
 		};
 

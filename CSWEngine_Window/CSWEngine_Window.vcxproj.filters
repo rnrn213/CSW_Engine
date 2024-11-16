@@ -28,6 +28,12 @@
     <ClInclude Include="cswPlayerScript.h">
       <Filter>Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="cswCat.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="cswCatScript.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cswPlayScene.cpp">
@@ -40,6 +46,12 @@
       <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="cswPlayerScript.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="cswCat.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="cswCatScript.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
   </ItemGroup>

@@ -138,6 +138,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    // load scenes
    csw::LoadScenes();
 
+   int a = 0;
+   srand((unsigned int)(&a));
+
    return TRUE;
 }
 

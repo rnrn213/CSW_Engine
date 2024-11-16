@@ -34,6 +34,8 @@ namespace csw
 			break;
 		case csw::PlayerScript::eState::Sleep:
 			break;
+		case csw::PlayerScript::eState::GiveWater:
+			break;
 		case csw::PlayerScript::eState::Attack:
 			break;
 		default:
