@@ -33,7 +33,7 @@ namespace csw
 			renderer::mainCamera = cameraComp;
 
 			mPlayer = object::Instantiate<Player>(enums::eLayerType::Particle);
-			mPlayer->AddComponent<PlayerScript>();
+			PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
 
 			//graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"MapleEffect");
 			//Animator* animator = mPlayer->AddComponent<Animator>();
@@ -51,7 +51,9 @@ namespace csw
 
 			playerAnimator->PlayAnimation(L"Idle", false);
 
-			mPlayer->GetComponent<Transform>()->SetPosition(Vector2(100.0f, 100.0f));
+			playerAnimator->GetCompleteEvent(L"FrontGiveWater") = std::bind(&PlayerScript::AttackEffect, plScript);
+
+			mPlayer->GetComponent<Transform>()->SetPosition(Vector2(0.0f, 0.0f));
 			//mPlayer->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 			//mPlayer->GetComponent<Transform>()->SetRotation(0.0f);
 

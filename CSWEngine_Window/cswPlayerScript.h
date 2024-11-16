@@ -23,6 +23,8 @@ namespace csw
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
+		void AttackEffect();
+
 	private:
 		void idle();
 		void move();
@@ -32,6 +34,5 @@ namespace csw
 		eState mState;
 		class Animator* mAnimator;
 
-		void (*CompleteEvent)();
 	};
 }

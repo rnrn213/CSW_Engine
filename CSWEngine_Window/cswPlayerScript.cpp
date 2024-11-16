@@ -4,6 +4,10 @@
 #include "cswTime.h"
 #include "cswGameObject.h"
 #include "cswAnimator.h"
+#include "cswCat.h"
+#include "cswCatScript.h"
+#include "cswObject.h"
+#include "cswResources.h"
 
 namespace csw
 {
@@ -76,6 +80,43 @@ namespace csw
 	}
 	void PlayerScript::Render(HDC hdc)
 	{
+	}
+	void PlayerScript::AttackEffect()
+	{
+		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
+		//SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
+		//sr->SetSize(Vector2(3.0f, 3.0f));
+		cat->AddComponent<CatScript>();
+
+		//graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"MapleEffect");
+		//Animator* animator = mPlayer->AddComponent<Animator>();
+		//animator->CreateAnimation(L"CatFrontMove", packmanTexture
+		//	, Vector2(0.0f, 0.0f), Vector2(386.0f, 246.0f), Vector2::Zero, 8, 0.1f);
+
+		//animator->PlayAnimation(L"CatFrontMove");
+
+		graphics::Texture* catTex = Resources::Find<graphics::Texture>(L"Cat");
+		Animator* catAnimator = cat->AddComponent<Animator>();
+		catAnimator->CreateAnimation(L"DownWalk", catTex
+			, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"RightWalk", catTex
+			, Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"UpWalk", catTex
+			, Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"LeftWalk", catTex
+			, Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"SitDown", catTex
+			, Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"Grooming", catTex
+			, Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"LayDown", catTex
+			, Vector2(0.0f, 192.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		catAnimator->PlayAnimation(L"SitDown", false);
+
+		cat->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 200.0f));
+		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
+		cat->GetComponent<Transform>()->SetRotation(0.0f);
 	}
 	void PlayerScript::idle()
 	{

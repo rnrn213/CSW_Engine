@@ -39,4 +39,14 @@ namespace csw
 	{
 		mActiveScene->Render(hdc);
 	}
+	void SceneManager::Release()
+	{
+		static std::map<std::wstring, Scene*> mScene;
+
+		for (auto& iter : mScene)
+		{
+			delete iter.second;
+			iter.second = nullptr;
+		}
+	}
 }

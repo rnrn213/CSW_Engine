@@ -2,6 +2,7 @@
 #include "cswInput.h"
 #include "cswTime.h"
 #include "cswSceneManager.h"
+#include "cswResources.h"
 
 namespace csw
 {
@@ -73,6 +74,11 @@ namespace csw
 		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
+	}
+	void Application::Release()
+	{
+		SceneManager::Release();
+		Resources::Release();
 	}
 	void Application::clearRenderTarget()
 	{
