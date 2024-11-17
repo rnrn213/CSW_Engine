@@ -34,6 +34,10 @@ namespace csw
 		{
 			if (gameObj == nullptr)
 				continue;
+			GameObject::eState state = gameObj->GetActive();
+			if (state == GameObject::eState::Paused
+				|| state == GameObject::eState::Dead)
+				continue;
 
 			gameObj->Update();
 		}
@@ -44,6 +48,10 @@ namespace csw
 		{
 			if (gameObj == nullptr)
 				continue;
+			GameObject::eState state = gameObj->GetActive();
+			if (state == GameObject::eState::Paused
+				|| state == GameObject::eState::Dead)
+				continue;
 
 			gameObj->LateUpdate();
 		}
@@ -53,6 +61,10 @@ namespace csw
 		for (GameObject* gameObj : mGameObjects)
 		{
 			if (gameObj == nullptr)
+				continue;
+			GameObject::eState state = gameObj->GetActive();
+			if (state == GameObject::eState::Paused
+				|| state == GameObject::eState::Dead)
 				continue;
 
 			gameObj->Render(hdc);

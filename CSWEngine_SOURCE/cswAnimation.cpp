@@ -81,7 +81,7 @@ namespace csw
 
             HDC imgHdc = mTexture->GetHdc();
 
-            AlphaBlend(hdc
+            /*AlphaBlend(hdc
                 , pos.x, pos.y
                 , sprite.size.x * scale.x
                 , sprite.size.y * scale.y
@@ -90,7 +90,18 @@ namespace csw
                 , sprite.leftTop.y
                 , sprite.size.x
                 , sprite.size.y
-                , func);
+                , func);*/
+
+            TransparentBlt(hdc
+                , pos.x, pos.y
+                , sprite.size.x * scale.x
+                , sprite.size.y * scale.y
+                , imgHdc
+                , sprite.leftTop.x
+                , sprite.leftTop.y
+                , sprite.size.x
+                , sprite.size.y
+                , RGB(255, 0, 255));
         }
         else if (type == graphics::Texture::eTextureType::Png)
         {
