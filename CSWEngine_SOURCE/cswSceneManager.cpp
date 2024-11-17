@@ -39,6 +39,10 @@ namespace csw
 	{
 		mActiveScene->Render(hdc);
 	}
+	void SceneManager::Destroy()
+	{
+		mActiveScene->Destroy();
+	}
 	void SceneManager::Release()
 	{
 		static std::map<std::wstring, Scene*> mScene;

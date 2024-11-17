@@ -54,6 +54,8 @@ namespace csw
 		Update();
 		LateUpdate();
 		Render();
+
+		Destroy();
 	}
 	void Application::Update()
 	{
@@ -74,6 +76,10 @@ namespace csw
 		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
+	}
+	void Application::Destroy()
+	{
+		SceneManager::Destroy();
 	}
 	void Application::Release()
 	{

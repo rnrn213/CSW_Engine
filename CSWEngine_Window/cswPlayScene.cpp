@@ -55,7 +55,7 @@ namespace csw
 			Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
 			cat->AddComponent<CatScript>();
 
-			cameraComp->SetTarget(cat);
+			//cameraComp->SetTarget(cat);
 
 			//graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"MapleEffect");
 			//Animator* animator = mPlayer->AddComponent<Animator>();
