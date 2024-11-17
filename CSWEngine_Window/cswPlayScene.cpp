@@ -47,7 +47,7 @@ namespace csw
 
 			playerAnimator->GetCompleteEvent(L"FrontGiveWater") = std::bind(&PlayerScript::AttackEffect, plScript);
 
-			mPlayer->GetComponent<Transform>()->SetPosition(Vector2(0.0f, 0.0f));
+			mPlayer->GetComponent<Transform>()->SetPosition(Vector2(100.0f, 100.0f));
 			//mPlayer->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 			//mPlayer->GetComponent<Transform>()->SetRotation(0.0f);
 
