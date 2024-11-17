@@ -35,12 +35,6 @@ namespace csw
 			mPlayer = object::Instantiate<Player>(enums::eLayerType::Particle);
 			PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
 
-			//graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"MapleEffect");
-			//Animator* animator = mPlayer->AddComponent<Animator>();
-			//animator->CreateAnimation(L"CatFrontMove", packmanTexture
-			//	, Vector2(0.0f, 0.0f), Vector2(386.0f, 246.0f), Vector2::Zero, 8, 0.1f);
-
-			//animator->PlayAnimation(L"CatFrontMove");
 
 			graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"Player");
 			Animator* playerAnimator = mPlayer->AddComponent<Animator>();
@@ -59,9 +53,9 @@ namespace csw
 
 			// CAT
 			Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
-			//SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
-			//sr->SetSize(Vector2(3.0f, 3.0f));
 			cat->AddComponent<CatScript>();
+
+			cameraComp->SetTarget(cat);
 
 			//graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"MapleEffect");
 			//Animator* animator = mPlayer->AddComponent<Animator>();
