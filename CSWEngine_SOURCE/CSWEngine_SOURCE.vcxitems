@@ -18,7 +18,11 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)cswAnimation.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswBoxCollider2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswCamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswCircleCollider2D.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswCollider.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswCollisionManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswEnums.h" />
@@ -42,7 +46,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)cswAnimation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswBoxCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswCircleCollider2D.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswCollider.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswGameObject.cpp" />

@@ -61,6 +61,7 @@ namespace csw
 				mState = eState::Paused;
 			}
 		}
+		bool IsActive() { return mState == eState::Active; }
 
 		void Death() { mState = eState::Dead; }
 

@@ -3,6 +3,7 @@
 #include "cswTime.h"
 #include "cswSceneManager.h"
 #include "cswResources.h"
+#include "cswCollisionManager.h"
 
 namespace csw
 {
@@ -44,10 +45,11 @@ namespace csw
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(oldBitmap);
 
-		SceneManager::Initialize();
-
 		Input::Initialize();
 		Time::Initialize();
+
+		CollisionManager::Initialize();
+		SceneManager::Initialize();
 	}
 	void Application::Run()
 	{
@@ -61,11 +63,12 @@ namespace csw
 	{
 		Input::Update();
 		Time::Update();
-
+		CollisionManager::Update();
 		SceneManager::Update();
 	}
 	void Application::LateUpdate()
 	{
+		CollisionManager::LateUpdate();
 		SceneManager::LateUpdate();
 	}
 	void Application::Render()
@@ -73,6 +76,7 @@ namespace csw
 		clearRenderTarget();
 
 		Time::Render(mBackHdc);
+		CollisionManager::Render(mBackHdc);
 		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
@@ -89,7 +93,13 @@ namespace csw
 	void Application::clearRenderTarget()
 	{
 		// clear
+		HBRUSH grayBrush = (HBRUSH)CreateSolidBrush(RGB(128, 128, 128));
+		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, grayBrush);
+
 		Rectangle(mBackHdc, -1, -1, 1601, 901);
+
+		SelectObject(mBackHdc, oldBrush);
+		DeleteObject(grayBrush);
 	}
 	void Application::copyRenderTarget(HDC source, HDC dest)
 	{

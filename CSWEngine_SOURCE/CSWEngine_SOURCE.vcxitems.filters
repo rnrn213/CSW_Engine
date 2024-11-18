@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)cswApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
@@ -57,9 +56,21 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)cswAnimation.cpp">
       <Filter>Resource</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswCollider.cpp">
+      <Filter>Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswBoxCollider2D.cpp">
+      <Filter>Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswCircleCollider2D.cpp">
+      <Filter>Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswCollisionManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswApplication.cpp">
+      <Filter>High Level Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)cswApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -124,6 +135,19 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)cswAnimation.h">
       <Filter>Resource</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswCollider.h">
+      <Filter>Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswBoxCollider2D.h">
+      <Filter>Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswCircleCollider2D.h">
+      <Filter>Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswCollisionManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswApplication.h">
+      <Filter>High Level Interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -170,6 +194,9 @@
     </Filter>
     <Filter Include="Renderer">
       <UniqueIdentifier>{a509599a-efba-4cf3-b74a-4586d8fbd277}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collider">
+      <UniqueIdentifier>{b5097944-2495-450f-9ba6-cfe6311233aa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

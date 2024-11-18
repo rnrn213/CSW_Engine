@@ -15,6 +15,8 @@
 #include "cswAnimator.h"
 #include "cswCat.h"
 #include "cswCatScript.h"
+#include "cswBoxCollider2D.h"
+#include "cswCollisionManager.h"
 
 namespace csw
 {
@@ -27,6 +29,8 @@ namespace csw
 	void PlayScene::Initialize()
 	{
 		{
+			CollisionManager::CollisionLayerCheck(enums::eLayerType::Player, enums::eLayerType::Animal, true);
+
 			// main camera
 			GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.0f, 442.0f));
 			Camera* cameraComp = camera->AddComponent<Camera>();
@@ -34,7 +38,8 @@ namespace csw
 
 			mPlayer = object::Instantiate<Player>(enums::eLayerType::Particle);
 			PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
-
+			BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
+			collider->SetOffset(Vector2(-50.0f, -50.0f));
 
 			graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"Player");
 			Animator* playerAnimator = mPlayer->AddComponent<Animator>();
@@ -51,9 +56,9 @@ namespace csw
 			//mPlayer->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 			//mPlayer->GetComponent<Transform>()->SetRotation(0.0f);
 
-			//// CAT
-			//Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
-			//cat->AddComponent<CatScript>();
+			// CAT
+			Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
+			cat->AddComponent<CatScript>();
 
 			////cameraComp->SetTarget(cat);
 
@@ -64,8 +69,13 @@ namespace csw
 
 			////animator->PlayAnimation(L"CatFrontMove");
 
-			//graphics::Texture* catTex = Resources::Find<graphics::Texture>(L"Cat");
-			//Animator* catAnimator = cat->AddComponent<Animator>();
+			graphics::Texture* catTex = Resources::Find<graphics::Texture>(L"Cat");
+			Animator* catAnimator = cat->AddComponent<Animator>();
+
+			BoxCollider2D* boxCatCollider = cat->AddComponent<BoxCollider2D>();
+			boxCatCollider->SetOffset(Vector2(-50.0f, -50.0f));
+
+
 			////catAnimator->CreateAnimation(L"DownWalk", catTex
 			////	, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
 			////catAnimator->CreateAnimation(L"RightWalk", catTex
@@ -83,11 +93,11 @@ namespace csw
 
 			////catAnimator->PlayAnimation(L"SitDown", false);
 
-			//catAnimator->CreateAnimationByFolder(L"MushroomIdle", L"..\\Resources\\Mushroom", Vector2::Zero, 0.1f);
+			catAnimator->CreateAnimationByFolder(L"MushroomIdle", L"..\\Resources\\Mushroom", Vector2::Zero, 0.1f);
 
-			//catAnimator->PlayAnimation(L"MushroomIdle", true);
+			catAnimator->PlayAnimation(L"MushroomIdle", true);
 
-			//cat->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 200.0f));
+			cat->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 200.0f));
 			//cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 			//cat->GetComponent<Transform>()->SetRotation(0.0f);
 
