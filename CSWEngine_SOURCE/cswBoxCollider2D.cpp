@@ -5,7 +5,7 @@
 namespace csw
 {
 	BoxCollider2D::BoxCollider2D()
-		: Collider()
+		: Collider(enums::eColliderType::Rect2D)
 	{
 	}
 	BoxCollider2D::~BoxCollider2D()

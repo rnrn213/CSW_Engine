@@ -18,7 +18,7 @@ namespace csw
 		virtual void Destroy();
 
 		void AddGameObject(GameObject* gameObject);
-
+		void EraseGameObject(GameObject* eraseGameObj);
 		const std::vector<GameObject*> GetGameObjects() { return mGameObjects; };
 
 	private:

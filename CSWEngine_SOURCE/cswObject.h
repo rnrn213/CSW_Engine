@@ -12,6 +12,7 @@ namespace csw::object
 	static T* Instantiate(csw::enums::eLayerType type)
 	{
 		T* gameObject = new T();
+		gameObject->SetLayerType(type);
 		Scene* activeScene = SceneManager::GetActiveScene();
 		Layer* layer = activeScene->GetLayer(type);
 		layer->AddGameObject(gameObject);
@@ -23,6 +24,7 @@ namespace csw::object
 	static T* Instantiate(csw::enums::eLayerType type, math::Vector2 position)
 	{
 		T* gameObject = new T();
+		gameObject->SetLayerType(type);
 		Scene* activeScene = SceneManager::GetActiveScene();
 		Layer* layer = activeScene->GetLayer(type);
 		layer->AddGameObject(gameObject);
@@ -36,5 +38,14 @@ namespace csw::object
 	static void Destroy(GameObject* obj)
 	{
 		obj->Death();
+	}
+
+	static void DontDestroyOnLoad(GameObject* gameObject)
+	{
+		Scene* activeScene = SceneManager::GetActiveScene();
+		activeScene->EraseGameObject(gameObject);
+
+		Scene* dontDestroyOnLoad = SceneManager::GetDontDestroyOnLoad();
+		dontDestroyOnLoad->AddGameObject(gameObject, gameObject->GetLayerType());
 	}
 }

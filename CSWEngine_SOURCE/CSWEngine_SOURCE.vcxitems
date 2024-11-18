@@ -24,6 +24,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)cswCollider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswCollisionManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswEnums.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswGameObject.h" />
@@ -52,6 +53,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)cswCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswInput.cpp" />

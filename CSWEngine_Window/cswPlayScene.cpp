@@ -36,9 +36,11 @@ namespace csw
 			Camera* cameraComp = camera->AddComponent<Camera>();
 			renderer::mainCamera = cameraComp;
 
-			mPlayer = object::Instantiate<Player>(enums::eLayerType::Particle);
+			mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
+			object::DontDestroyOnLoad(mPlayer);
 			PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
-			BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
+			//BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
+			CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
 			collider->SetOffset(Vector2(-50.0f, -50.0f));
 
 			graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"Player");
@@ -72,7 +74,7 @@ namespace csw
 			graphics::Texture* catTex = Resources::Find<graphics::Texture>(L"Cat");
 			Animator* catAnimator = cat->AddComponent<Animator>();
 
-			BoxCollider2D* boxCatCollider = cat->AddComponent<BoxCollider2D>();
+			CircleCollider2D* boxCatCollider = cat->AddComponent<CircleCollider2D>();
 			boxCatCollider->SetOffset(Vector2(-50.0f, -50.0f));
 
 

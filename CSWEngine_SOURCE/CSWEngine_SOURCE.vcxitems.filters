@@ -69,6 +69,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)cswApplication.cpp">
       <Filter>High Level Interface</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswDontDestroyOnLoad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)cswScene.h">
@@ -148,6 +149,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)cswApplication.h">
       <Filter>High Level Interface</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswDontDestroyOnLoad.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">

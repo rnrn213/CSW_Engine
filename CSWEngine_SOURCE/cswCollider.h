@@ -6,7 +6,7 @@ namespace csw
 	class Collider : public Component
 	{
 	public:
-		Collider();
+		Collider(enums::eColliderType type);
 		~Collider();
 
 		virtual void Initialize();
@@ -23,12 +23,14 @@ namespace csw
 		UINT32 GetID() { return mID; }
 		Vector2 GetSize() { return mSize; }
 		void SetSize(Vector2 size) { mSize = size; }
+		enums::eColliderType GetColliderType() { return mType; }
 
 	private:
 		static UINT32 mCollisionID;
 		UINT mID;
 		Vector2 mOffset;
 		Vector2 mSize;
+		enums::eColliderType mType;
 	};
 }
 

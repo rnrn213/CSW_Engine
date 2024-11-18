@@ -18,12 +18,12 @@ namespace csw
 	}
 	void TitleScene::Initialize()
 	{
-		GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);
-		SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
-		bgSr->SetSize(Vector2(5.0f, 5.0f));
+		//GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);
+		//SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
+		//bgSr->SetSize(Vector2(5.0f, 5.0f));
 
-		graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"TitleBackground");
-		bgSr->SetTexture(bgTexture);
+		//graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"TitleBackground");
+		//bgSr->SetTexture(bgTexture);
 
 		// 게임 오브젝트 생성 후에 레이어와 게임오브젝트들의 initialize 함수를 호출
 		Scene::Initialize();

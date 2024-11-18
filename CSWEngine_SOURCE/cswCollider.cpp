@@ -5,8 +5,9 @@
 namespace csw
 {
 	UINT32 Collider::mCollisionID = 1;
-	Collider::Collider()
+	Collider::Collider(enums::eColliderType type)
 		: Component(enums::eComponentType::Collider)
+		, mType(type)
 		, mID(mCollisionID++)
 		, mSize(Vector2::One)
 	{

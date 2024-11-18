@@ -94,4 +94,12 @@ namespace csw
 			return;
 		mGameObjects.push_back(gameObject);
 	}
+	void Layer::EraseGameObject(GameObject* eraseGameObj)
+	{
+		std::erase_if(mGameObjects,
+			[=](GameObject* gameObj)
+			{
+				return gameObj == eraseGameObj;
+			});
+	}
 }
