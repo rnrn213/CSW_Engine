@@ -9,9 +9,6 @@
 #include <map>
 #include <functional>
 #include <filesystem>
-#include <math.h>
-
-#include "cswMath.h"
 
 #include <mmsystem.h>
 #include <dinput.h>
@@ -22,3 +19,4 @@
 #pragma comment(lib, "gdiplus.lib");
 
 #include "cswEnums.h"
+#include "cswMath.h"
