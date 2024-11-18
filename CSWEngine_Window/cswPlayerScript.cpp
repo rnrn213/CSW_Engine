@@ -8,6 +8,7 @@
 #include "cswCatScript.h"
 #include "cswObject.h"
 #include "cswResources.h"
+#include "cswCollider.h"
 
 namespace csw
 {
@@ -123,6 +124,15 @@ namespace csw
 
 		Vector2 mousePos = Input::GetMousePosition();
 		catSrc->mDest = mousePos;
+	}
+	void PlayerScript::OnCollisionEnter(Collider* other)
+	{
+	}
+	void PlayerScript::OnCollisionStay(Collider* other)
+	{
+	}
+	void PlayerScript::OnCollisionExit(Collider* other)
+	{
 	}
 	void PlayerScript::idle()
 	{
