@@ -70,6 +70,9 @@
       <Filter>High Level Interface</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)cswDontDestroyOnLoad.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswTileMapRenderer.cpp">
+      <Filter>Component\TileMapRenderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)cswScene.h">
@@ -150,6 +153,9 @@
       <Filter>High Level Interface</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)cswDontDestroyOnLoad.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswTileMapRenderer.h">
+      <Filter>Component\TileMapRenderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -199,6 +205,9 @@
     </Filter>
     <Filter Include="Component\Collider">
       <UniqueIdentifier>{b5097944-2495-450f-9ba6-cfe6311233aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\TileMapRenderer">
+      <UniqueIdentifier>{fa8633e4-2cea-4544-a651-6b09ae11f8f3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

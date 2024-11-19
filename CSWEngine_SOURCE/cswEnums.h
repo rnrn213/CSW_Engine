@@ -17,7 +17,7 @@ namespace csw::enums
 	{
 		None,
 		BackGround,
-		// Tree
+		Tile,
 		// Character
 		Animal,
 		Player,

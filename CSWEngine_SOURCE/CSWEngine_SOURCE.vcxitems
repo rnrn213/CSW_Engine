@@ -40,6 +40,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)cswScript.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswTexture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)cswTileMapRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)cswTransform.h" />
   </ItemGroup>
@@ -67,6 +68,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)cswScript.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswTexture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)cswTileMapRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)cswTransform.cpp" />
   </ItemGroup>

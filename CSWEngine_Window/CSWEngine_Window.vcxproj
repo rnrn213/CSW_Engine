@@ -137,8 +137,10 @@
     <ClInclude Include="cswPlayer.h" />
     <ClInclude Include="cswPlayerScript.h" />
     <ClInclude Include="cswPlayScene.h" />
+    <ClInclude Include="cswTile.h" />
     <ClInclude Include="cswTitleScene.h" />
     <ClInclude Include="cswLoadResources.h" />
+    <ClInclude Include="cswToolScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cswCat.cpp" />
@@ -146,7 +148,9 @@
     <ClCompile Include="cswPlayer.cpp" />
     <ClCompile Include="cswPlayerScript.cpp" />
     <ClCompile Include="cswPlayScene.cpp" />
+    <ClCompile Include="cswTile.cpp" />
     <ClCompile Include="cswTitleScene.cpp" />
+    <ClCompile Include="cswToolScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
